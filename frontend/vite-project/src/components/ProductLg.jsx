@@ -109,7 +109,7 @@ const ProductLg = () => {
             <div className='flex items-center gap-6'>
                 <div className='flex items-baseline'>
                     <CiHome />
-                    <p>Home</p>
+                    <a href='/'>Home</a>
                 </div>
                 <div>
                     <MdKeyboardArrowRight />

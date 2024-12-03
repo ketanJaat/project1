@@ -16,6 +16,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
+import { PiArrowSquareLeftDuotone } from "react-icons/pi";
+import { PiArrowSquareRightDuotone } from "react-icons/pi";
 
 
 const ProductSm = () => {
@@ -48,6 +50,13 @@ const ProductSm = () => {
         fetchProducts();
       
     }, []); 
+
+    const [serachTerm , setSearchTerm] = useState('');
+
+    const filterData = products.filter(
+        (product) => product.brand.toLowerCase()
+        .includes('d')
+    );
 
     const product = products.filter((p) => p.id === id)[0];
 
@@ -105,25 +114,45 @@ const ProductSm = () => {
     }
 
 
+    const [rightSwipe1 , setRightSwipe1] = useState(0);
+
+    // const handleRightSwipe = () => {
+    //     setRightSwipe(!rightSwipe);
+    // }
+
+
+    const handleRightSwipe1 = () => {
+        console.log('right clicked')
+        setRightSwipe1((prevSwipe) => (prevSwipe < 900 ? prevSwipe + 300 : 0));
+        console.log(rightSwipe1)
+    }
+
+    const handleLeftSwipe1 = () => {
+        console.log('left clickeds')
+        setRightSwipe1((prevSwipe) => (prevSwipe > 0 ? prevSwipe - 300 : 0));
+        console.log(rightSwipe1)
+    }
+
+
   return (
     <div className='overflow-x-hidden'>
-        <div className='flex gap-2 p-2 border-y-2 border-black'>{/* browse all category bar */}
-            <div className='flex items-center gap-1 flex-wrap'>
-                <div className='flex items-baseline'>
+        <div className='flex gap-2 p-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-y-2 border-black'>{/* browse all category bar */}
+            <div className='flex items-center gap-1 flex-wrap bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+                <div className='flex items-center gap-1'>
                     <CiHome />
-                    <p>Home</p>
+                    <a href='/'>Home</a>
                 </div>
                 <div>
                     <MdKeyboardArrowRight />
                 </div>
                 <div className='flex items-baseline'>
-                    <p>shop</p>
+                    <a href='/shop'>shop</a>
                 </div>
                 <div>
                     <MdKeyboardArrowRight />
                 </div>
                 <div className='flex items-center'>
-                    <p>Proteins</p>
+                    <a href='/protein/all'>Proteins</a>
                 </div>
                 <div>
                     <MdKeyboardArrowRight />
@@ -138,22 +167,22 @@ const ProductSm = () => {
             </div>
         </div>
 
-        <div className='flex flex-col'>
-            <div className='h-screen bg-yellow-900 flex flex-col '>
-                <div className='bg-green-500 h-3/5 w-full px-10' >
-                    <img className='h-full' src={proteinDabba}/>
+        <div className='flex flex-col bg-black'>
+            <div className='h-screen  flex flex-col '>
+                <div className='bg-gray-600 h-3/5 w-full px-10' >
+                    <img className='h-full' src={product?.imageUrl1}/>
                 </div>
-                <div className='flex items-center bg-purple-400 w-4/5 place-content-between'>
+                <div className='flex items-center bg-gradient-to-b from-black via-gray-800 to-black w-4/5 place-content-between'>
                     <MdKeyboardArrowLeft />
-                    <div className='flex'>
-                        <img className='h-20' src={proteinDabba}/>
-                        <img className='h-20'  src={proteinDabba}/>
-                        <img className='h-20'  src={proteinDabba}/>
+                    <div className='flex gap-2 p-1'>
+                        <img className='h-20' src={product?.imageUrl1}/>
+                        <img className='h-20'  src={product?.imageUrl1}/>
+                        <img className='h-20'  src={product?.imageUrl1}/>
                     </div>
                     <MdKeyboardArrowRight/>
                 </div>
             </div>
-            <div className='h- bg-orange-600 flex flex-col gap-16 p-10'>
+            <div className='-mt-36 bg-black text-white flex flex-col gap-16 p-10'>
                 <div className='flex flex-col gap-5'>
                     <p>{product?.name}</p>
                     <p>by {product?.country}</p>
@@ -181,47 +210,33 @@ const ProductSm = () => {
                         <p className=''>₹ 9,299.00</p>
                     </div>
                     <p>flavour</p>
-                    <select className='w-1/2'>
+                    <select className='w-1/2 text-black'>
                         <option value='Double Chocolate Cookie'>{product?.flavour}</option>
                     </select>
                     <p>Size</p>
                     <div>{product?.weight}</div>
-                    <div className='flex gap-6'>
+                    {/* <div className='flex gap-6'>
                         <div className='flex bg-gray-500 items-center gap-3'>
                             <FaMinus />
                             <p>1</p>
                             <FaPlus />
                         </div>
-                    </div>
+                    </div> */}
                     <div onClick={addToCart} className='flex items-center gap-2'>
                         <FaCartPlus/>
                         <p>ADD TO CART</p>
                     </div>
-                    <div>
-                        QUICK BUY
-                    </div>
                     
                 </div>
-                <div className='flex flex-col gap-3 '>
-                    <div className='flex gap-2 bg-yellow-500 w-2/5 place-content-between p-2'>
-                        <input className='p-2 rounded-lg' placeholder='enter pincode'/>
-                        <div className='rounded-full bg-green-600 p-1'>check</div>
-                    </div>
-                    <div>
-                        enter pincode for exact delivery time/charges
-                    </div>
-                </div>
-                <div>
+                <div className='-mt-8'>
                     Share this product
                 </div>
             </div>
         </div>
 
-        <div className='pl-10 w-5/6 pt-16 flex flex-col gap-12'>
+        <div className='bg-black -mt-14 text-white pl-10 w- pt-16 flex flex-col gap-12'>
             <div className='flex gap-4'>
                 <div>Description</div>
-                <div>Videos</div>
-                <div>Reviews</div>
             </div>
             <div>
                 <div className='flex items-center gap-4'>
@@ -233,72 +248,72 @@ const ProductSm = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-7'>
-                <table className='border-2 border-black'>
-                    <caption className='border-2 border-black'>General Traits</caption>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Weight In Lbs.	</td>
+                <table className='border-2 border-white w-5/6'>
+                    <caption className='border-2 border-white'>General Traits</caption>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Weight In Lbs.	</td>
                         <td >{product?.weight}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Weight In kg</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Weight In kg</td>
                         <td>{product?.weight}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Number of Servings	</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Number of Servings	</td>
                         <td>{product?.serving}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Serving Size		</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Serving Size		</td>
                         <td>{product?.servingSize}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Vegetarian/Non-Vegetarian	</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Vegetarian/Non-Vegetarian	</td>
                         <td>{product?.vegetarian}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Flavour	</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Flavour	</td>
                         <td>{product?.flavour}</td>
                     </tr>
                 </table>
-                <table className='border-2 border-black '>
-                    <caption className='border-2 border-black'>Additional Information</caption>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Country of Origin	</td>
+                <table className='border-2 border-white w-5/6'>
+                    <caption className='border-2 border-white'>Additional Information</caption>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Country of Origin	</td>
                         <td>{product?.country}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Brand Origin	</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Brand Origin	</td>
                         <td>{product?.brand}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Form</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Form</td>
                         <td>Powder</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Packaging</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Packaging</td>
                         <td>{product?.packaging}</td>
                     </tr>
                     <tr>
-                        <td className='border-2 border-black'>Goal	</td>
+                        <td className='border-2 border-white'>Goal	</td>
                         <td>{product?.goal}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Protein	</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Protein	</td>
                         <td>30g</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Exp Date		</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Exp Date		</td>
                         <td>{product?.expdate}</td>
                     </tr>
                 </table>
-                <table className='border-2 border-black'>
-                    <caption className='border-2 border-black'>Special Traits</caption>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>LifeStyle	</td>
+                <table className='border-2 border-white w-5/6'>
+                    <caption className='border-2 border-white'>Special Traits</caption>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>LifeStyle	</td>
                         <td>{product?.lifestage}</td>
                     </tr>
-                    <tr className='border-2 border-black'>
-                        <td className='border-2 border-black'>Gender	</td>
+                    <tr className='border-2 border-white'>
+                        <td className='border-2 border-white'>Gender	</td>
                         <td>{product?.gender}</td>
                     </tr>
                 </table>
@@ -337,16 +352,57 @@ const ProductSm = () => {
                 </div>
         </div>
 
-        <div className='h-screen bg-orange-400 flex items-center justify-center'>
-            <div className='w-5/6 h-5/6 bg-green-600 grid grid-cols-2 p-2 gap-2'>
-                <div className='bg-gray-500'> dfsa</div>
-                <div className='bg-gray-500'>dssdf</div>
-                <div className='bg-gray-500'>asdf</div>
-                <div className='bg-gray-500'>asdf</div>
+        <div className='h-screen w-screen bg-gradient-to-b from-black via-gray-800 to-black flex flex-col items-center -mb-24 gap-10'>    
+            <div className='text-white mt-12 -ml-48 text-xl'>Related Products</div>
+            <div className='flex w-5/6 rounded-xl place-content-between items-center px-1 h-1/2 bg-gradient-to-b from-black via-gray-800 to-black'>
+                <button onClick={handleLeftSwipe1} className='group'>
+                <PiArrowSquareLeftDuotone className='text-3xl text-gray-950 '/>
+                </button>
+                <div className=' w-5/6 h-[300px] overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative rounded-xl bg-gradient-to-b from-gray-700 via-gray-400 to-zinc-700 grid grid-flow-col px-2'>
+                    {
+                        filterData.length > 0 && 
+                        filterData.map(
+                            (products) => {
+                                return(
+                                    <div className='bg-gray-800 rounded-2xl min-w-64 h-[280px] flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
+                                        style={{transform: `translateX(-${rightSwipe1}px)`}}
+                                        key={products?._id}>
+                                        <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
+                                            {products.saving}% off
+                                        </div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
+                                        <div className='text-gray-200'>
+                                            {products.brand}
+                                        </div>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
+                                            {products.name}
+                                        </a>
+                                        <div className='flex place-content-between'>
+                                            <div className='text-gray-200'>
+                                                {products.price}
+                                            </div>
+                                            <div>
+                                                <div className='flex items-center gap-2 text-gray-200'>
+                                                    <FaCartPlus className='text-xl'/>
+                                                    <p className='text-gray-200'>Cart</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        )
+                    }
+                    
+                </div>
+
+                <PiArrowSquareRightDuotone onClick={handleRightSwipe1} className='text-gray-950 text-3xl group'/>
             </div>
         </div>
 
-        <div className='flex gap-6 pb-16 flex-col justify-center items-center'>
+        <div className='flex bg-black text-white gap-6 pb-16 flex-col justify-center items-center'>
             <div className='flex flex-col justify-center items-center gap-7 w-2/3 px-10'>
                 <div>
                     <img src={logo}/>
@@ -417,7 +473,7 @@ const ProductSm = () => {
             </div>
         </div>
 
-        <footer className='flex place-content-between p-8 border-y-2 border-black'>
+        <footer className='flex bg-black text-white place-content-between p-8 border-y-2 border-black'>
             <div className='text-base'>
                 <p className='text-gray-600'>Copyright © 2024, supplementsvilla.com</p>
             </div>

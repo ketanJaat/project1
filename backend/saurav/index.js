@@ -1,3 +1,6 @@
+const path = require('path');
+const _dirname = path.resolve();
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -21,6 +24,11 @@ app.use(fileupload({
 const routes = require('./routes/route');
 
 app.use('/api/v1' , routes);
+
+app.use(express.static(path.join(_dirname , "/frontend/vite-project/dist")));
+app.get('*' , (_, res) => {
+    res.sendFile(path.resolve(_dirname , "frontend", "vite-project" , "dist" , "index.html"));
+})
 
 //start server
 app.listen(PORT , () => {

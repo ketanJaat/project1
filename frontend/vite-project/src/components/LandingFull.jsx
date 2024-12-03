@@ -377,13 +377,13 @@ const LandingFull = () => {
                                         <div className='bg-gray-700 text-white rounded-lg -mt-2 -ml-1 pl-1 w-2/5'>
                                             {products?.saving}% off
                                         </div>
-                                        <button className='h-3/5 bg-black'>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
                                             <img className='h-full w-full' src={products.imageUrl1}/>
-                                        </button>
+                                        </a>
                                         <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <a className='text-gray-200' href={`/product/${products?.id}`}>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
                                         </a>
                                         <div className='flex place-content-between'>
@@ -449,15 +449,15 @@ const LandingFull = () => {
                                         <div className='bg-gray-700 text-white rounded-lg text-white -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-black'>
-                                            <img className='w-full h-full' src={products.imageUrl1}/>
-                                        </div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
                                         <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div className='text-gray-200'>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between'>
                                             <div className='text-gray-200'>
                                                 {products.price}
@@ -503,15 +503,15 @@ const LandingFull = () => {
                                         <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-black'>
-                                            <img className='w-full h-full' src={products.imageUrl1}/>
-                                        </div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
                                         <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div className='text-gray-200'>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between'>
                                             <div className='text-gray-200'>
                                                 {products.price}
@@ -553,15 +553,15 @@ const LandingFull = () => {
                                         <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-black'>
-                                            <img className='w-full h-full' src={products.imageUrl1}/>
-                                        </div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
                                         <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div className='text-gray-200'>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between text-gray-200'>
                                             <div>
                                                 {products.price}
@@ -590,7 +590,7 @@ const LandingFull = () => {
                 Top brands
             </div>
             <div className='flex  px-10 m-auto h-52 w-[1520px]  justify-center overflow-x-hidden '>
-                <div className='flex bg-gradient-to-b from-black via-gray-500 to-black gap-8 transform transition-transform duration-300 animate-slide'>
+                <div className='group flex bg-gradient-to-b from-black via-gray-500 to-black gap-8 transform transition-transform duration-300 animate-slide group-hover:animation-play-state-paused'>
                     <div className='bg-gray-700 flex flex-col gap-5 items-center justify-center border-2 border-black rounded-2xl min-w-36'>
                         <img className='rounded-xl h-32' src={brand}/>
                         <p className='ml-4 text-gray-300'>international protein</p>

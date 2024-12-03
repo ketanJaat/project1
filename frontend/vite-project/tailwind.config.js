@@ -36,5 +36,16 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.animation-play-state-paused': {
+          'animation-play-state': 'paused',
+        },
+        '.animation-play-state-running': {
+          'animation-play-state': 'running',
+        },
+      });
+    },
+  ],
 }

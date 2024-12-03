@@ -20,6 +20,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addProductToCart } from '../redux/ProductSlice';
 import axios from 'axios';
 import middle from '../assets/middle.png'
+import { PiArrowSquareLeftDuotone } from "react-icons/pi";
+import { PiArrowSquareRightDuotone } from "react-icons/pi";
 
 
 
@@ -133,13 +135,36 @@ const productFull = () => {
   }
 
 
+  const [serachTerm , setSearchTerm] = useState('');
+
+    const filterData = products.filter(
+        (product) => product.name.toLowerCase()
+        .includes(serachTerm.toLowerCase())
+    );
+
+
+  const [rightSwipe1 , setRightSwipe1] = useState(0);
+
+  // const handleRightSwipe = () => {
+  //     setRightSwipe(!rightSwipe);
+  // }
+
+  const handleRightSwipe1 = () => {
+      setRightSwipe1((prevSwipe) => (prevSwipe < 900 ? prevSwipe + 300 : 0));
+  }
+
+  const handleLeftSwipe1 = () => {
+      setRightSwipe1((prevSwipe) => (prevSwipe > 0 ? prevSwipe - 300 : 0));
+  }
+
+
 
   return (
     
     <div>
 
-        <div className='flex relative gap-10 px-6 border-y-2 border-black'>{/* browse all category bar */}
-            <button onClick={handleClick} className='relative group bg-green-600'>Browse all categories</button>
+        <div className='flex relative gap-10 px-6 border-y-2 border-black bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>{/* browse all category bar */}
+            <button onClick={handleClick} className='relative group '>Browse all categories</button>
             {/* DROPDOWN OF CONTENT */}
             <div className={`bg-white ${isBrowseClick ? 'visible' : 'invisible'} z-10 p-8 px-5 w-1/3 h-screen fixed -mt-[122px] -ml-6`}>
                 <div className='flex place-content-between bg-green-700'>  
@@ -225,9 +250,9 @@ const productFull = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex items-center gap-6 bg-orange-400 h-16'>
+            <div className='flex items-center gap-6 h-16'>
                 <div className='h-full'>
-                    <div className='relative group flex items-center justify-center bg-gray-700 h-full'>
+                    <div className='relative group flex items-center justify-center h-full'>
                         <div className=''>Brands</div>
                         <RiArrowDropDownLine />
                         <div className='absolute mt-[556px] rounded-2xl ml-[735px] invisible group-hover:visible bg-green-300 gap-10 w-[800px] h-[490px] grid grid-rows-11 grid-cols-3 grid-flow-col p-5 px-auto z-50 '>
@@ -268,7 +293,7 @@ const productFull = () => {
                     </div>
                 </div>
                 <div className='flex items-baseline h-full'>
-                    <div className='group flex  items-center justify-center bg-gray-700 h-full'>
+                    <div className='group flex  items-center justify-center  h-full'>
                         <div>Goals</div>
                         <RiArrowDropDownLine />
                         <div className='absolute mt-[320px] ml-40 rounded-2xl invisible p-4 gap-4  group-hover:visible bg-green-300  w-fit h-fit grid grid-flow-row z-50 '>
@@ -282,7 +307,7 @@ const productFull = () => {
                     </div>
                 </div>
                 <div className='flex items-center h-full'>
-                    <div className='group flex items-center justify-center bg-gray-700 h-full'>
+                    <div className='group flex items-center justify-center  h-full'>
                         <p>Deals</p>
                         <div className='absolute mt-[240px] ml-20 invisible p-4 gap-4 rounded-2xl group-hover:visible bg-green-300 w-fit h-fit grid  grid-flow-row z-50'>
                                 <p>Pick of the day</p>
@@ -294,7 +319,7 @@ const productFull = () => {
                 </div>
                 <p>Blogs</p>
                 <div className='flex items-center h-full'>
-                    <div className='group flex items-center justify-center bg-gray-700 h-full'>
+                    <div className='group flex items-center justify-center h-full'>
                         <p>Customer Support</p>
                         <RiArrowDropDownLine />
                         <div className='absolute mt-[440px] ml-20 invisible w-64 gap-4 p-4 rounded-2xl  group-hover:visible bg-green-300  w- h-fit grid grid-flow-row z-50'>
@@ -314,9 +339,9 @@ const productFull = () => {
             </div>
         </div>
 
-      <div className='flex gap-10 p-6 border-y-2 border-black'>{/* browse all category bar */}
+      <div className='flex gap-10 p-6 border-y-2 border-black bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>{/* browse all category bar */}
           <div className='flex items-center gap-6'>
-              <div className='flex items-baseline'>
+              <div className='flex items-center gap-2'>
                   <CiHome />
                   <p>Home</p>
               </div>
@@ -346,8 +371,8 @@ const productFull = () => {
       </div>
 
       <div className='h-screen flex'>
-          <div className='w-2/5 h-screen bg-yellow-400 flex flex-col justify-center items-start'>
-              <div className='bg-green-500 h-4/5 w-full p-10' >
+          <div className='w-2/5 h-screen bg-black flex flex-col justify-center items-start'>
+              <div className='bg-gray-600 h-4/5 w-full p-10' >
                   <img className='h-full' src={count === 1
                                                 ? product?.imageUrl1
                                                 : count === 2
@@ -357,17 +382,15 @@ const productFull = () => {
                                                 : middle}
                     />
               </div>
-              <div className='flex items-center bg-purple-400 w-4/5 place-content-between'>
-                  <MdKeyboardArrowLeft />
-                  <div className='flex'>
+              <div className='flex items-center justify-center bg-gradient-to-b from-black via-gray-800 to-black w-full  place-content-between'>
+                  <div className='flex mt-5 gap-4'>
                       <img className='h-20' onClick={handle1} src={product?.imageUrl1}/>
                       <img className='h-20' onClick={handle2} src={product?.imageUrl2}/>
                       <img className='h-20' onClick={handle3} src={product?.imageUrl3}/>
                   </div>
-                  <MdKeyboardArrowRight/>
               </div>
           </div>
-          <div className='w-3/5 h-screen bg-orange-600 flex flex-col gap-16 p-10'>
+          <div className='w-3/5 h-screen bg-black text-white flex flex-col gap-16 p-10'>
               <div className='flex flex-col gap-5'>
                   <p>{product?.name}</p>
                   <p>by {product?.country}</p>
@@ -395,35 +418,18 @@ const productFull = () => {
                       <p className=''>₹ 9,299.00</p>
                   </div>
                   <p>flavour</p>
-                  <select className='w-1/2'>
+                  <select className='w-1/2 text-black'>
                       <option value='Double Chocolate Cookie'>{product?.flavour}</option>
                   </select>
                   <p>Size</p>
                   <div>{product?.weight}</div>
                   <div className='flex gap-6'>
-                      <div className='flex bg-gray-500 items-center gap-3'>
-                          <FaMinus />
-                          <p>1</p>
-                          <FaPlus />
-                      </div>
                       <div className='flex items-center gap-2'>
                           <FaCartPlus/>
                           <button onClick={addToCart}>ADD TO CART</button>
                       </div>
-                      <div>
-                          QUICK BUY
-                      </div>
                   </div>
                   
-              </div>
-              <div className='flex flex-col gap-3 '>
-                  <div className='flex gap-2 bg-yellow-500 w-2/5 place-content-between p-2'>
-                      <input className='p-2 rounded-lg' placeholder='enter pincode'/>
-                      <div className='rounded-full bg-green-600 p-1'>check</div>
-                  </div>
-                  <div>
-                      enter pincode for exact delivery time/charges
-                  </div>
               </div>
               <div>
                   Share this product
@@ -431,7 +437,7 @@ const productFull = () => {
           </div>
       </div>
 
-      <div className='pl-36 w-5/6 pt-16 flex flex-col gap-12'>
+      <div className='pl-36 w-full pt-16 flex flex-col gap-12 bg-black text-white'>
           <div className='flex gap-4'>
               <div>Description</div>
               <div>Videos</div>
@@ -446,73 +452,73 @@ const productFull = () => {
                   {product?.brand} (✓ Brand Authorized)
               </div>
           </div>
-          <div className='flex flex-col gap-7'>
-              <table className='border-2 border-black w-2/5'>
-                  <caption className='border-2 border-black'>General Traits</caption>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Weight In Lbs.	</td>
+          <div className='flex flex-col gap-7 bg-black'>
+              <table className='border-2 border-white w-2/5'>
+                  <caption className='border-2 border-white'>General Traits</caption>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Weight In Lbs.	</td>
                       <td >{product?.weight}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Weight In kg</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Weight In kg</td>
                       <td>{product?.weight}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Number of Servings	</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Number of Servings	</td>
                       <td>{product?.serving}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Serving Size		</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Serving Size		</td>
                       <td>{product?.servingSize}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Vegetarian/Non-Vegetarian	</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Vegetarian/Non-Vegetarian	</td>
                       <td>{product?.vegetarian}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Flavour	</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Flavour	</td>
                       <td>{product?.flavour}</td>
                   </tr>
               </table>
-              <table className='border-2 border-black w-2/5'>
-                  <caption className='border-2 border-black'>Additional Information</caption>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Country of Origin	</td>
+              <table className='border-2 border-white w-2/5'>
+                  <caption className='border-2 border-white'>Additional Information</caption>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Country of Origin	</td>
                       <td>{product?.country}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Brand Origin	</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Brand Origin	</td>
                       <td>{product?.brand}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Form</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Form</td>
                       <td>Powder</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Packaging</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Packaging</td>
                       <td>{product?.packaging}</td>
                   </tr>
                   <tr>
-                      <td className='border-2 border-black'>Goal	</td>
+                      <td className='border-2 border-white'>Goal	</td>
                       <td>{product?.goal}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Protein	</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Protein	</td>
                       <td>30g</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Exp Date		</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Exp Date		</td>
                       <td>{product?.expdate}</td>
                   </tr>
               </table>
-              <table className='border-2 border-black w-2/5'>
-                  <caption className='border-2 border-black'>Special Traits</caption>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>LifeStyle	</td>
+              <table className='border-2 border-white w-2/5'>
+                  <caption className='border-2 border-white'>Special Traits</caption>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>LifeStyle	</td>
                       <td>{product?.lifestage}</td>
                   </tr>
-                  <tr className='border-2 border-black'>
-                      <td className='border-2 border-black'>Gender	</td>
+                  <tr className='border-2 border-white'>
+                      <td className='border-2 border-white'>Gender	</td>
                       <td>{product?.gender}</td>
                   </tr>
               </table>
@@ -551,16 +557,69 @@ const productFull = () => {
               </div>
       </div>
 
-      <div className='h-screen bg-orange-400 flex items-center justify-center'>
-          <div className='w-5/6 h-5/6 bg-green-600 grid grid-cols-4 p-2 gap-2'>
-              <div className='bg-gray-500'> dfsa</div>
-              <div className='bg-gray-500'>dssdf</div>
-              <div className='bg-gray-500'>asdf</div>
-              <div className='bg-gray-500'>asdf</div>
+      <div className='h-screen bg-black flex items-center justify-center'>
+          <div className='w-5/6 h-5/6 bg-gray-600 flex flex-col p-2 gap-2 '>
+                <div className='text-3xl text-gray-200 '>
+                    Related Products
+                </div>
+                <div className='w-full h-full p-2 gap-2 bg-gradient-to-b from-black via-gray-800 to-black'>
+                    <div className='flex place-content-between items-center px-10 h-full bg-gradient-to-b from-black via-gray-800 to-black'>
+                        <button onClick={handleLeftSwipe1} className='group m-0'>
+                            <PiArrowSquareLeftDuotone className='text-6xl text-gray-950 '/>
+                        </button>
+
+                        <div className=' w- h-5/6 overflow-hidden items-center relative rounded-3xl bg-gradient-to-b from-gray-700 via-gray-400 to-zinc-700 grid grid-flow-col gap-10 grid-cols- grid-rows-1 px-7'>    
+
+                        {
+                            filterData.length > 0 && 
+                            filterData.map(
+                                (products) => {
+                                    return(
+                                        <div className={`bg-gray-800 rounded-2xl min-w-64 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300 `} 
+                                            style={{transform: `translateX(-${rightSwipe1}px)`}}
+                                            key={products?._id}>
+                                            <div className='bg-gray-700 text-white rounded-lg -mt-2 -ml-1 pl-1 w-2/5'>
+                                                {products?.saving}% off
+                                            </div>
+                                            <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                                <img className='h-full w-full' src={products.imageUrl1}/>
+                                            </a>
+                                            <div className='text-gray-200'>
+                                                {products.brand}
+                                            </div>
+                                            <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
+                                                {products.name}
+                                            </a>
+                                            <div className='flex place-content-between'>
+                                                <div className='text-gray-200'>
+                                                    {products.price}
+                                                </div>
+                                                <div>
+                                                    <div className='flex items-center gap-2'>
+                                                        <FaCartPlus className='text-xl text-gray-300'/>
+                                                        <p className='text-gray-300'>Cart</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            )
+                        }
+
+                        </div>
+
+                        <button onClick={handleRightSwipe1} className='group m-0'>
+                            <PiArrowSquareRightDuotone className='text-6xl text-gray-950 '/>
+                        </button>
+
+                        {/* <PiArrowSquareRightDuotone onClick={handleRightSwipe1}  className=' text-9xl group text-gray-950'/> */}
+                    </div>
+                </div>
           </div>
       </div>
 
-      <div className='flex gap-6 pb-16'>
+      <div className='flex gap-6 pb-16 bg-black text-white'>
           <div className='flex flex-col w-1/5 gap-7 pl-10'>
               <div>
                   <img src={logo}/>
@@ -629,7 +688,7 @@ const productFull = () => {
           </div>
       </div>
       
-      <footer className='flex place-content-between p-10 border-y-2 border-black'>
+      <footer className='flex place-content-between p-10 border-y-2 border-black bg-black text-white'>
           <div className='text-lg'>
               <p>Copyright © 2024, supplementsvilla.com</p>
           </div>

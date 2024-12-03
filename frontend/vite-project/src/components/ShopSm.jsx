@@ -55,37 +55,40 @@ const ShopSm = () => {
         <div className=''>
             <NavbarSm/>
     
-            <div className='flex gap-10 p-6 border-y-2 border-black'>{/* browse all category bar */}
+            <div className='flex gap-10 p-6 border-y-2 border-black bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>{/* browse all category bar */}
                 <div className='flex items-center gap-6'>
                     <div className='flex items-center gap-2'>
                         <FaHome/>
-                        <p>Home</p>
+                        <a href='/'>Home</a>
                     </div>
                     <MdOutlineKeyboardArrowRight />
                     <div className='flex items-baseline'>
-                        <p>shop</p>
+                        <a href='/shop'>shop</a>
                     </div> 
                 </div>
             </div>
     
-            <div className='grid grid-cols-2 grid-flow-row gap-4'>
+            <div className='grid grid-cols-2 grid-flow-row gap-4 bg-black text-white'>
             {
                                 filterData.length > 0 && 
                                 filterData.map(
                                     (products) => {
                                         return(
-                                            <div className='bg-orange-500 border-2 border-black h-96 flex flex-col place-content-evenly px-2' key={products?._id}>
-                                                <div className='h-3/5 bg-green-600'>
-                                                    <img className='' src={proteinDabba}/>
+                                            <div className='bg-gray-800 rounded-2xl border-2 border-black h-96 flex flex-col place-content-evenly px-2' key={products?.id}>
+                                                <div className='bg-gray-700 text-white rounded-lg -mt-2 -ml-1 pl-1 w-2/5'>
+                                                    {products?.saving}% off
                                                 </div>
-                                                <div>
+                                                <a className='h-fit ' href={`/product/${products?.id}`}>
+                                                    <img className='h-fit' src={products.imageUrl1}/>
+                                                </a>
+                                                <div className='text-gray-200'>
                                                     {products.brand}
                                                 </div>
-                                                <a href={`/product/${products?._id}`}>
+                                                <a href={`/product/${products?.id}`} className='text-gray-200'>
                                                     {products.name}
                                                 </a>
                                                 <div className='flex place-content-between'>
-                                                    <div>
+                                                    <div className='text-gray-200'>
                                                         {products.price}
                                                     </div>
                                                     <div>
@@ -103,7 +106,7 @@ const ShopSm = () => {
     
             </div>
     
-            <div className='flex gap-6 pb-16 flex-col justify-center items-center'>
+            <div className='flex gap-6 pb-16 flex-col bg-black text-white justify-center items-center'>
             <div className='flex flex-col justify-center items-center gap-3 w-2/3 px-10'>
                 <div>
                     <img src={logo}/>
@@ -174,7 +177,7 @@ const ShopSm = () => {
             </div>
             </div>
 
-            <footer className='flex place-content-between p-8 border-y-2 border-black'>
+            <footer className='flex place-content-between bg-black text-white p-8 border-y-2 border-black'>
                 <div className='text-base'>
                     <p className='text-gray-600'>Copyright © 2024, supplementsvilla.com</p>
                 </div>

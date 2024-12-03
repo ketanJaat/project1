@@ -39,7 +39,7 @@ const navbarlg = () => {
 
   return (
     <div>
-        <nav className='bg-yellow-500 flex place-content-between px-10 items-center'>
+        <nav className='bg-black flex place-content-between px-10 items-center'>
             <div className='w-1/3'>
                 <a href='/'><button><img src={logo}/></button></a>
             </div>
@@ -51,7 +51,7 @@ const navbarlg = () => {
             </div> */}
             
             <button onClick={handleClick} className='mr-10'>
-                <FaBars className='text-3xl'/>
+                <FaBars className='text-3xl text-gray-400'/>
             </button>
             <div className={`bg-green-400 overflow-y-scroll ${isBrowseClick ? 'visible' : 'invisible'} z-10 -ml-10 w-2/5 p-8  mt-[590px] h-screen fixed flex place-content-evenly flex-col`}>
                 <div>
@@ -281,10 +281,10 @@ const navbarlg = () => {
             </div> */}
             <div className='flex gap-5'>
                 <div className='text-3xl'>
-                    <FiSearch/>
+                    <FiSearch className='text-gray-400'/>
                 </div>
                 <div className='text-2xl'>
-                    <a href='/cart'><FaCartPlus/></a>
+                    <a href='/cart'><FaCartPlus className='text-gray-400'/></a>
                 </div>
             </div>
         </nav>

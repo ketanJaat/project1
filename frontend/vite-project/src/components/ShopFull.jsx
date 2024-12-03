@@ -71,102 +71,104 @@ const ShopFull = () => {
 
   return (
 
-    <div className=''>
+    <div className='bg-black text-white'>
         <NavbarFull/>
 
-        <div className='flex relative gap-10 px-6 border-y-2 border-black'>{/* browse all category bar */}
-            <button onClick={handleClick} className='relative group bg-green-600'>Browse all categories</button>
+        <div className='flex bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 relative gap-10 px-6 border-y-2 border-black'>{/* browse all category bar */}
+            <button onClick={handleClick} className='relative group bg-indigo-800 rounded-lg p-2'>Browse all categories</button>
             {/* DROPDOWN OF CONTENT */}
-            <div className={`bg-white ${isBrowseClick ? 'visible' : 'invisible'} z-10 p-8 px-5 w-1/3 h-screen fixed -mt-[122px] -ml-6`}>
-                <div className='flex place-content-between bg-green-700'>  
+            <div className={`bg-black text-gray-200 ${isBrowseClick ? 'visible' : 'invisible'} z-10 p-8 px-5 w-1/3 h-screen fixed -mt-[122px] -ml-6`}>
+                <div className='flex place-content-between bg-gray-700'>  
                     <div>Categories</div>
-                    <div onClick={handleClick} className='bg-yellow-600'><HiMiniXMark /></div>
+                    <div onClick={handleClick} className='bg-gray-700'><HiMiniXMark /></div>
                 </div>
-                <div className='bg-orange-500 h-full flex flex-col gap-10 relative'>
+                <div className='bg-gray-500 h-full flex flex-col gap-10 relative'>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('protein')} className='w-2/5 bg-yellow-700 p-2 h-10'>protein</button>
-                        <div className={`bg-purple-500 absolute ml-44 ${activeSection === 'protein' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/protein/all'>All protein</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/protein/blend'>blend protein</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/protein/whey'>whey protein</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/protein/iso'>isolate protein</a></div>
+                        <button onClick={() => handleSectionClick('protein')} className='w-2/5 bg-gray-600 p-2 h-10'>protein</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900 absolute ml-44 ${activeSection === 'protein' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/protein/all'>All protein</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/protein/blend'>blend protein</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/protein/whey'>whey protein</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/protein/iso'>isolate protein</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex '>
-                        <button onClick={() =>  handleSectionClick('mass')} className='w-2/5 bg-yellow-700 p-2'>mass & muscle gainer</button>
-                        <div className={`bg-purple-500 absolute ml-44 -mt-20 group-visited:visible ${activeSection === 'mass' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a  href='/shop/mass&muscleGainer'>All mass & muscle gainer</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a  href='/shop/mass&muscleGainer'>mass & muscle gainer</a></div>
+                        <button onClick={() =>  handleSectionClick('mass')} className='w-2/5 bg-gray-600 p-2'>mass & muscle gainer</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900 absolute ml-44 -mt-20 group-visited:visible ${activeSection === 'mass' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a  href='/shop/mass&muscleGainer'>All mass & muscle gainer</a></div>
+                            <div className='border- border-black p-2 py-6'><a  href='/shop/mass&muscleGainer'>mass & muscle gainer</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('weight loss')} className='w-2/5 bg-yellow-700 p-2'>weight loss</button>
-                        <div className={`bg-purple-500  absolute ml-44 -mt-40 group-visited:visible ${activeSection === 'weight loss' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/weightloss/all'>All weight loss</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/weightloss/L-carnitine'>l carnitine</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/weightloss/fatburners'>fat  burner</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/weightloss/CLA'>cla</a></div>
+                        <button onClick={() => handleSectionClick('weight loss')} className='w-2/5 bg-gray-600 p-2'>weight loss</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900  absolute ml-44 -mt-40 group-visited:visible ${activeSection === 'weight loss' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/weightloss/all'>All weight loss</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/weightloss/L-carnitine'>l carnitine</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/weightloss/fatburners'>fat  burner</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/weightloss/CLA'>cla</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('essentials')} className='w-2/5 bg-yellow-700 p-2'>essentials</button>
-                        <div className={`bg-purple-500  absolute ml-44 -mt-60 group-visited:visible ${activeSection === 'essentials' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/all'>all essentials</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/energypowder'>Energy Powder</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/bcaa-amino'>BCAA & Amino</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/preworkout'>Pre Workout</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/glutamine'>Glutamine</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/creatine'>creatine</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/essentials/gymessentials'>gym essentials</a></div>
+                        <button onClick={() => handleSectionClick('essentials')} className='w-2/5 bg-gray-600 p-2'>essentials</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900  absolute ml-44 -mt-60 group-visited:visible ${activeSection === 'essentials' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/essentials/all'>all essentials</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/essentials/energypowder'>Energy Powder</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/essentials/bcaa-amino'>BCAA & Amino</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/essentials/preworkout'>Pre Workout</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/essentials/glutamine'>Glutamine</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/essentials/creatine'>creatine</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/essentials/gymessentials'>gym essentials</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('health & Wellness')} className='w-2/5 bg-yellow-700 p-2'>health & Wellness</button>
-                        <div className={`bg-purple-500  absolute ml-44 -mt-80 group-visited:visible ${activeSection === 'health & Wellness' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/all'>All health & Wellness</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/multivitamins'>Multi vitamins</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/fishoil'>fish oil</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/digestiveenzymes'>digestive enzymes</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/testobooster'>testo booster</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/sportshealthy'>sports healthy</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/healthwellness/healthyjoints'>healthy joints</a></div>
+                        <button onClick={() => handleSectionClick('health & Wellness')} className='w-2/5 bg-gray-600 p-2'>health & Wellness</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900  absolute ml-44 -mt-80 group-visited:visible ${activeSection === 'health & Wellness' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/healthwellness/all'>All health & Wellness</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/healthwellness/multivitamins'>Multi vitamins</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/healthwellness/fishoil'>fish oil</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/healthwellness/digestiveenzymes'>digestive enzymes</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/healthwellness/testobooster'>testo booster</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/healthwellness/sportshealthy'>sports healthy</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/healthwellness/healthyjoints'>healthy joints</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('Muscle Pumping')} className='w-2/5 bg-yellow-700 p-2'>Muscle Pumping</button>
-                        <div className={`bg-purple-500  absolute ml-44 -mt-[400px] group-visited:visible ${activeSection === 'Muscle Pumping' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/musclepumping/all'>All Muscle Pumping</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/musclepumping/l-arginine'>L-arginine</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/musclepumping/citruline'>Citrulline</a></div>
+                        <button onClick={() => handleSectionClick('Muscle Pumping')} className='w-2/5 bg-gray-600 p-2'>Muscle Pumping</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900  absolute ml-44 -mt-[400px] group-visited:visible ${activeSection === 'Muscle Pumping' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/musclepumping/all'>All Muscle Pumping</a></div>
+                            <div className='border- border-black p-2 py-6'><a href='/shop/musclepumping/l-arginine'>L-arginine</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/musclepumping/citruline'>Citrulline</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('stacks')} className='w-2/5 bg-yellow-700 p-2'>stacks</button>
-                        <div className={`bg-purple-500  absolute ml-44 -mt-[480px] group-visited:visible ${activeSection === 'stacks' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/all'>All stacks</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/bulkbody'>Bulk body</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/fatloss'>fat loss</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/massgaining'>muscle gaining</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/musclegaining'>mass gaining</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/sizegaining'>size gaining</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/stacks/cuttingstack'>cutting stack</a></div>
+                        <button onClick={() => handleSectionClick('stacks')} className='w-2/5 bg-gray-600 p-2'>stacks</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900  absolute ml-44 -mt-[480px] group-visited:visible ${activeSection === 'stacks' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/stacks/all'>All stacks</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/stacks/bulkbody'>Bulk body</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/stacks/fatloss'>fat loss</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/stacks/massgaining'>muscle gaining</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/stacks/musclegaining'>mass gaining</a></div>
+                            <div className='border-y- border-black p-2 py-6'><a href='/shop/stacks/sizegaining'>size gaining</a></div>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/stacks/cuttingstack'>cutting stack</a></div>
                         </div>
                     </div>
                     <div className='w-full  flex'>
-                        <button onClick={() => handleSectionClick('carbo')} className='w-2/5 bg-yellow-700 p-2'>carbo</button>
-                        <div className={`bg-purple-500  absolute ml-44 -mt-[560px] group-visited:visible ${activeSection === 'carbo' ? 'block' : 'hidden'}  w-3/5 `}>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/carbo/all'>All carbo</a></div>
-                            <div className='border-2 border-black p-2 py-6'><a href='/shop/carbo/carbo'>carbo</a></div>
+                        <button onClick={() => handleSectionClick('carbo')} className='w-2/5 bg-gray-600 p-2'>carbo</button>
+                        <div className={`bg-gradient-to-r from-gray-500 to-blue-900  absolute ml-44 -mt-[560px] group-visited:visible ${activeSection === 'carbo' ? 'block' : 'hidden'}  w-3/5 `}>
+                            <div className='border-y-2 border-black p-2 py-6'><a href='/shop/carbo/all'>All carbo</a></div>
+                            <div className='border- border-black p-2 py-6'><a href='/shop/carbo/carbo'>carbo</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className='flex items-center gap-6 bg-orange-400 h-16'>
+            <div className='flex items-center gap-6 h-16'>
                 <div className='h-full'>
-                    <div className='relative group flex items-center justify-center bg-gray-700 h-full'>
-                        <div className=''>Brands</div>
-                        <RiArrowDropDownLine />
-                        <div className='absolute mt-[556px] rounded-2xl ml-[735px] invisible group-hover:visible bg-green-300 gap-10 w-[800px] h-[490px] grid grid-rows-11 grid-cols-3 grid-flow-col p-5 px-auto z-50 '>
+                    <div className='relative group flex items-center justify-center h-full'>
+                        <div className='hover:scale-110 hover:shadow-lg h-full flex items-center shadow-white transform transition-transform  duration-300'>
+                                Brands
+                                <RiArrowDropDownLine />
+                        </div>
+                        <div className='absolute mt-[556px] rounded-2xl ml-[735px] invisible group-hover:visible bg-gray-600 text-gray-300 gap-10 w-[800px] h-[490px] grid grid-rows-11 grid-cols-3 grid-flow-col p-5 px-auto z-50 '>
                                 <a href='/brands/muscelblaze'>MUSCLEBLAZE</a>
                                 <a href='/brands/muscletrial'>MUSCLE TRAIL</a>
                                 <a href='/brands/promove'>PROMOVE</a>
@@ -204,10 +206,12 @@ const ShopFull = () => {
                     </div>
                 </div>
                 <div className='flex items-baseline h-full'>
-                    <div className='group flex  items-center justify-center bg-gray-700 h-full'>
-                        <div>Goals</div>
-                        <RiArrowDropDownLine />
-                        <div className='absolute mt-[320px] ml-40 rounded-2xl invisible p-4 gap-4  group-hover:visible bg-green-300  w-fit h-fit grid grid-flow-row z-50 '>
+                    <div className='group flex  items-center justify-center h-full'>
+                        <div className='hover:scale-110 hover:shadow-lg h-full flex items-center shadow-white transform transition-transform  duration-300'>
+                                Goals
+                                <RiArrowDropDownLine />
+                        </div>
+                        <div className='bg-gray-600 text-gray-300 absolute mt-[320px] ml-40 rounded-2xl invisible p-4 gap-4  group-hover:visible  w-fit h-fit grid grid-flow-row z-50 '>
                                 <a href='/goals/muscle building' className='flex '>Muscle Building</a>
                                 <a href='/goals/mass and muscle gaining' className='flex'>mass and muscle gaining</a>
                                 <a href='/goals/health and well being' className='flex'>health and well being</a>
@@ -218,9 +222,9 @@ const ShopFull = () => {
                     </div>
                 </div>
                 <div className='flex items-center h-full'>
-                    <div className='group flex items-center justify-center bg-gray-700 h-full'>
+                    <div className='group flex items-center justify-center h-full'>
                         <p>Deals</p>
-                        <div className='absolute mt-[240px] ml-20 invisible p-4 gap-4 rounded-2xl group-hover:visible bg-green-300 w-fit h-fit grid  grid-flow-row z-50'>
+                        <div className='absolute mt-[240px] ml-20 invisible p-4 gap-4 rounded-2xl group-hover:visible bg-gray-600 text-gray-300 w-fit h-fit grid  grid-flow-row z-50'>
                                 <p>Pick of the day</p>
                                 <p>star x sale</p>
                                 <p>super saving sale</p>
@@ -230,10 +234,12 @@ const ShopFull = () => {
                 </div>
                 <p>Blogs</p>
                 <div className='flex items-center h-full'>
-                    <div className='group flex items-center justify-center bg-gray-700 h-full'>
-                        <p>Customer Support</p>
-                        <RiArrowDropDownLine />
-                        <div className='absolute mt-[440px] ml-20 invisible w-64 gap-4 p-4 rounded-2xl  group-hover:visible bg-green-300  w- h-fit grid grid-flow-row z-50'>
+                    <div className='group flex items-center justify-center  h-full'>
+                        <div className='hover:scale-110 hover:shadow-lg h-full flex items-center shadow-white transform transition-transform  duration-300'>
+                                Customer Support
+                                <RiArrowDropDownLine />
+                        </div>
+                        <div className='absolute mt-[440px] ml-20 invisible w-64 gap-4 p-4 rounded-2xl  group-hover:visible bg-gray-600 text-gray-300  w- h-fit grid grid-flow-row z-50'>
                                 <p>about</p>
                                 <p>gallery</p>
                                 <p>video gallery</p>
@@ -250,7 +256,7 @@ const ShopFull = () => {
             </div>
         </div>
 
-        <div className='flex gap-10 p-6 border-y-2 border-black'>{/* browse all category bar */}
+        <div className='flex gap-10 p-6 border-y-2 border-black bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>{/* browse all category bar */}
             <div className='flex items-center gap-6'>
                 <div className='flex items-center gap-2'>
                     <FaHome/>
@@ -269,10 +275,13 @@ const ShopFull = () => {
                             filterData.map(
                                 (products) => {
                                     return(
-                                        <div className='bg-orange-500 border-2 border-black h-96 flex flex-col place-content-evenly px-2' key={products?._id}>
-                                            <div className='h-3/5 bg-green-600'>
-                                                <img className='' src={products.imageUrl}/>
+                                        <div className='bg-gray-800 rounded-2xl border-2 border-black h-80 flex flex-col place-content-evenly px-2' key={products?.id}>
+                                            <div className='bg-gray-700 text-white rounded-lg -mt-2 -ml-1 pl-1 w-2/5'>
+                                                {products?.saving}% off
                                             </div>
+                                            <a className='h-fit ' href={`/product/${products?.id}`}>
+                                                <img className='' src={products.imageUrl1}/>
+                                            </a>
                                             <div>
                                                 {products.brand}
                                             </div>

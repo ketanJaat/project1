@@ -47,11 +47,11 @@ const LandingSm = () => {
     );
 
     const gncFilter = products.filter(
-        (product) => product.brand.toLowerCase().includes('dd')
+        (product) => product.brand.toLowerCase().includes('')
     )
 
     const starFilter = products.filter(
-        (product) => product.brand.toLowerCase().includes('aa')
+        (product) => product.brand.toLowerCase().includes('')
     )
 
 
@@ -157,56 +157,56 @@ const LandingSm = () => {
  
 
   return (
-    <div className='overflow-x-hidden'>
-        <div className=' mt-2 relative '>{/*poster */}
-            <div className='flex items-center w-full'>
-                <div className='absolute flex w-screen place-content-between px-10'>
-                    <PiArrowSquareLeftDuotone onClick={handleLeftSwipe5} className='bg-green-500'/>
-                    <PiArrowSquareRightDuotone onClick={handleRightSwipe5} className='bg-yellow-500'/>
+    <div className='overflow-x-hidden text-gray-400'>
+        <div className=' mt- relative'>{/*poster */}
+            <div className='flex items-center w-full bg-black'>
+                <div className='absolute flex w-screen place-content-between px-10 z-20'>
+                    <PiArrowSquareLeftDuotone onClick={handleLeftSwipe5} className='text-white'/>
+                    <PiArrowSquareRightDuotone onClick={handleRightSwipe5} className='text-white'/>
                 </div>
-                <div className='w-full -z-10 flex transform transition-transform duration-300'
+                <div className='w-full z-10 flex items-center transform transition-transform duration-300'
                     style={{transform: `translateX(-${rightSwipe5}px)`}}>
-                    <img className='min-w-full h-80 -z-10' src='https://www.supplementsvilla.com/uploads/sliders/65c4d43fc691d.jpg'/>
-                    <img className='min-w-full h-80 -z-10' src={blocks}/>
+                    <img className='min-w-full h-fit' src='https://www.supplementsvilla.com/uploads/sliders/65c4d43fc691d.jpg'/>
+                    <img className='min-w-full h-fit' src={blocks}/>
                 </div>
             </div>
         </div>
 
-        <div className='h-screen bg-gray-400 flex flex-col py-4 gap-4'>
+        <div className='h-screen bg-black -mt-6 flex flex-col py-4 gap-4'>
             <p className='p-6 flex items-center justify-center '>Featured Product</p>
-            <div className='flex place-content-between items-center px-1 h-1/2 bg-yellow-400'>
+            <div className='flex place-content-between items-center px-1 h-1/2 bg-gradient-to-b from-black via-gray-800 to-black'>
                 <button onClick={handleLeftSwipe1} className='group'>
-                    <PiArrowSquareLeftDuotone  className='bg-green-500 text-3xl'/>
+                <PiArrowSquareLeftDuotone className='text-3xl text-gray-950 '/>
                 </button>
-                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative bg-yellow-300 grid grid-flow-col px-2'>
+                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative rounded-xl bg-gradient-to-b from-gray-700 via-gray-400 to-zinc-700 grid grid-flow-col px-2'>
                     {
                         filterData.length > 0 && 
                         filterData.map(
                             (products) => {
                                 return(
-                                    <div className='bg-orange-500 min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
+                                    <div className='bg-gray-800 rounded-2xl min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
                                         style={{transform: `translateX(-${rightSwipe1}px)`}}
                                         key={products?._id}>
-                                        <div className='bg-blue-400 -mt-3 -ml-2 pl-1 w-2/5'>
+                                        <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-green-600'>
-                                            <img className='' src={products.img}/>
-                                        </div>
-                                        <div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
+                                        <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between'>
-                                            <div>
+                                            <div className='text-gray-200'>
                                                 {products.price}
                                             </div>
                                             <div>
-                                                <div className='flex items-center gap-2'>
+                                                <div className='flex items-center gap-2 text-gray-200'>
                                                     <FaCartPlus className='text-xl'/>
-                                                    <p>Cart</p>
+                                                    <p className='text-gray-200'>Cart</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -218,23 +218,23 @@ const LandingSm = () => {
                     
                 </div>
 
-                <PiArrowSquareRightDuotone onClick={handleRightSwipe1} className='bg-yellow-500 text-3xl group'/>
+                <PiArrowSquareRightDuotone onClick={handleRightSwipe1} className='text-gray-950 text-3xl group'/>
             </div>
 
-            <div className='bg-orange-400 grid grid-cols-1 grid-rows-1 gap-4 px-10'>
+            <div className='bg-black grid grid-cols-1 grid-rows-1 gap-4 px-10 mt-6'>
                 <div>
                     <img className='rounded-xl' src={blocks}/>
                 </div>
             </div>
         </div>
 
-        <div className='flex justify-center gap-7 pt-5 w-screen p-10 bg-green-600'>
+        <div className='flex justify-center gap-7 pt-1 w-screen p-10 bg-gradient-to-b from-black via-gray-800 to-black'>
 
             <button onClick={handleLeftSwipe2} className='group'>
-                <PiArrowSquareLeftDuotone  className='bg-purple-500 text-3xl'/>
+                <PiArrowSquareLeftDuotone  className='text-gray-950 text-3xl'/>
             </button>
 
-            <div className='w-5/6 h-full overflow-hidden place-content-evenly px-2 flex bg-orange-400'>    
+            <div className='w-5/6 h-full overflow-hidden place-content-evenly px-2 flex bg-gradient-to-b from-black via-gray-800 to-black'>    
                 <div className='h-full w-full flex transform transition-transform duration-300'
                     style={{transform: `translateX(-${rightSwipe2}px)`}}>
                     <img className='w-fit' src={poster}/>
@@ -243,46 +243,46 @@ const LandingSm = () => {
             </div>
             
             <button className='group'>
-                <PiArrowSquareRightDuotone onClick={handleRightSwipe2} className='bg-purple-500 text-3xl'/>
+                <PiArrowSquareRightDuotone onClick={handleRightSwipe2} className='text-gray-950 text-3xl'/>
             </button>
 
         </div>
 
-        <div className='h-screen bg-gray-400 flex flex-col py-4 gap-4'>
-            <p className='p-6 flex items-center justify-center '>gnc deal</p>
-            <div className='flex place-content-between items-center px-1 h-1/2 bg-yellow-400'>
+        <div className='h-screen bg-black flex flex-col py-4 gap-4'>
+            <p className=' flex items-center ml-12 pb-5 -mt-4 '>gnc deal</p>
+            <div className='flex place-content-between items-center px-1 h-1/2 bg-gradient-to-b from-black via-gray-800 to-black'>
                 <button className='group'>
-                    <PiArrowSquareLeftDuotone onClick={handleLeftSwipe3} className='bg-green-500 text-3xl'/>
+                    <PiArrowSquareLeftDuotone onClick={handleLeftSwipe3} className='text-gray-950 text-3xl'/>
                 </button>
-                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative bg-yellow-300 grid grid-flow-col px-2'>
+                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative bg-gradient-to-b from-gray-700 via-gray-400 to-zinc-700 rounded-2xl grid grid-flow-col px-2'>
                     {
                         gncFilter.length > 0 && 
                         gncFilter.map(
                             (products) => {
                                 return(
-                                    <div className='bg-orange-500 min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
+                                    <div className='bg-gray-800 rounded-2xl min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
                                         style={{transform: `translateX(-${rightSwipe3}px)`}}
                                         key={products?._id}>
-                                        <div className='bg-blue-400 -mt-3 -ml-2 pl-1 w-2/5'>
+                                        <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-green-600'>
-                                            <img className='' src={products.img}/>
-                                        </div>
-                                        <div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
+                                        <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between'>
-                                            <div>
+                                            <div className='text-gray-200'>
                                                 {products.price}
                                             </div>
                                             <div>
                                                 <div className='flex items-center gap-2'>
-                                                    <FaCartPlus className='text-xl'/>
-                                                    <p>Cart</p>
+                                                    <FaCartPlus className='text-xl textg-gray-200'/>
+                                                    <p lassName='text-gray-200'>Cart</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -293,47 +293,47 @@ const LandingSm = () => {
                     }
                 </div>
 
-                <PiArrowSquareRightDuotone onClick={handleRightSwipe3} className='bg-yellow-500 text-3xl group'/>
+                <PiArrowSquareRightDuotone onClick={handleRightSwipe3} className='text-gray-950 text-3xl group'/>
             </div>
 
             
         </div>
 
-        <div className='h-screen bg-gray-400 flex flex-col py-4 gap-4'>
-            <p className='p-6 flex items-center justify-center '>super saving deal</p>
-            <div className='flex place-content-between items-center px-1 h-1/2 bg-yellow-400'>
-                <button onClick={handleLeftSwipe4} className='group'>
-                    <PiArrowSquareLeftDuotone  className='bg-green-500 text-3xl'/>
+        <div className='h-screen bg-black flex flex-col -mt-64 gap-4'>
+            <p className='ml-12 mt-8 mb-5 flex items-center '>gnc deal</p>
+            <div className='flex place-content-between items-center px-1 h-1/2 bg-gradient-to-b from-black via-gray-800 to-black'>
+                <button className='group'>
+                    <PiArrowSquareLeftDuotone onClick={handleLeftSwipe3} className='text-gray-950 text-3xl'/>
                 </button>
-                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative bg-yellow-300 grid grid-flow-col px-2'>
+                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative bg-gradient-to-b from-gray-700 via-gray-400 to-zinc-700 rounded-2xl grid grid-flow-col px-2'>
                     {
                         gncFilter.length > 0 && 
                         gncFilter.map(
                             (products) => {
                                 return(
-                                    <div className='bg-orange-500 min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300'
-                                        style={{transform: `translateX(-${rightSwipe4}px)`}}
-                                         key={products?._id}>
-                                        <div className='bg-blue-400 -mt-3 -ml-2 pl-1 w-2/5'>
+                                    <div className='bg-gray-800 rounded-2xl min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
+                                        style={{transform: `translateX(-${rightSwipe3}px)`}}
+                                        key={products?._id}>
+                                        <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-green-600'>
-                                            <img className='' src={products.img}/>
-                                        </div>
-                                        <div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
+                                        <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between'>
-                                            <div>
+                                            <div className='text-gray-200'>
                                                 {products.price}
                                             </div>
                                             <div>
                                                 <div className='flex items-center gap-2'>
-                                                    <FaCartPlus className='text-xl'/>
-                                                    <p>Cart</p>
+                                                    <FaCartPlus className='text-xl text-gray-200'/>
+                                                    <p lassName='text-gray-200'>Cart</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -344,47 +344,47 @@ const LandingSm = () => {
                     }
                 </div>
 
-                <PiArrowSquareRightDuotone onClick={handleRightSwipe4} className='bg-yellow-500 text-3xl group'/>
+                <PiArrowSquareRightDuotone onClick={handleRightSwipe3} className='text-gray-950 text-3xl group'/>
             </div>
 
             
         </div>
 
-        <div className='h-screen bg-gray-400 flex flex-col py-4 gap-4'>
-            <p className='p-6 flex items-center justify-center '>star x deal</p>
-            <div className='flex place-content-between items-center px-1 h-1/2 bg-yellow-400'>
-                <button onClick={handleLeftSwipe6} className='group'>
-                    <PiArrowSquareLeftDuotone  className='bg-green-500 text-3xl'/>
+        <div className='h-screen bg-black flex flex-col -mt-64 gap-4'>
+            <p className='ml-12 mt-20 mb-5 flex items-center '>gnc deal</p>
+            <div className='flex place-content-between items-center px-1 h-1/2 bg-gradient-to-b from-black via-gray-800 to-black'>
+                <button className='group'>
+                    <PiArrowSquareLeftDuotone onClick={handleLeftSwipe3} className='text-gray-950 text-3xl'/>
                 </button>
-                <div className=' w-5/6 h-full overflow-scroll items-center gap-3 group-hover:translate-x-[200px] relative bg-yellow-300 grid grid-flow-col px-2'>
+                <div className=' w-5/6 h-full overflow-hidden items-center gap-3 group-hover:translate-x-[200px] relative bg-gradient-to-b from-gray-700 via-gray-400 to-zinc-700 rounded-2xl grid grid-flow-col px-2'>
                     {
-                        starFilter.length > 0 && 
-                        starFilter.map(
+                        gncFilter.length > 0 && 
+                        gncFilter.map(
                             (products) => {
                                 return(
-                                    <div className='bg-orange-500 min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300'
-                                        style={{transform: `translateX(-${rightSwipe6}px)`}}
-                                         key={products?._id}>
-                                        <div className='bg-blue-400 -mt-3 -ml-2 pl-1 w-2/5'>
+                                    <div className='bg-gray-800 rounded-2xl min-w-40 h-full flex flex-col place-content-evenly px-2 transform transition-transform duration-300' 
+                                        style={{transform: `translateX(-${rightSwipe3}px)`}}
+                                        key={products?._id}>
+                                        <div className='bg-gray-700 text-white rounded-lg -mt-3 -ml-2 pl-1 w-2/5'>
                                             {products.saving}% off
                                         </div>
-                                        <div className='h-3/5 bg-green-600'>
-                                            <img className='' src={products.img}/>
-                                        </div>
-                                        <div>
+                                        <a href={`/product/${products?.id}`} className='h-3/5 bg-black'>
+                                            <img className='h-full w-full' src={products.imageUrl1}/>
+                                        </a>
+                                        <div className='text-gray-200'>
                                             {products.brand}
                                         </div>
-                                        <div>
+                                        <a className='text-gray-200 hover:text-gray-400' href={`/product/${products?.id}`}>
                                             {products.name}
-                                        </div>
+                                        </a>
                                         <div className='flex place-content-between'>
-                                            <div>
+                                            <div className='text-gray-200'>
                                                 {products.price}
                                             </div>
                                             <div>
                                                 <div className='flex items-center gap-2'>
-                                                    <FaCartPlus className='text-xl'/>
-                                                    <p>Cart</p>
+                                                    <FaCartPlus className='text-xl text-gray-200'/>
+                                                    <p lassName='text-gray-200'>Cart</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -395,7 +395,7 @@ const LandingSm = () => {
                     }
                 </div>
 
-                <PiArrowSquareRightDuotone onClick={handleRightSwipe6} className='bg-yellow-500 text-3xl group'/>
+                <PiArrowSquareRightDuotone onClick={handleRightSwipe3} className='text-gray-950 text-3xl group'/>
             </div>
 
             
@@ -411,8 +411,8 @@ const LandingSm = () => {
                 <p>international protein</p>
             </div>
         </div> */}
-        <div className='flex bg-gray-500 px-10 h-52 m-auto w-[1380px]  justify-center overflow-x-hidden '>
-            <div className='flex bg-yellow-600  gap-8 transform transition-transform duration-300 animate-slide'>
+        <div className='flex -mt-28 bg-gray-500 px-10 h-52 m-auto w-[1380px]  justify-center overflow-x-hidden group'>
+            <div className='group flex bg-gradient-to-b from-black via-gray-500 to-black  gap-8 transform transition-transform duration-300 animate-slide hover:animate-none'>
                 <div className=' flex flex-col gap-5 items-center justify-center border-2 border-black rounded-2xl min-w-36'>
                     <img className='rounded-xl h-32' src={brand}/>
                     <p>international protein</p>
@@ -468,12 +468,12 @@ const LandingSm = () => {
         </div>
 
         <div className='flex place-content-center flex-col'>
-            <div className='bg-green-600 px-10 flex justify-center'>
-                <video className='h-72' src={video} type='video/mp4' muted/>
+            <div className='bg-gradient-to-b from-black via-gray-800 to-black px-10 flex justify-center h-80 items-center'>
+                <video className='h-64 border-gray-600 border-2 rounded-2xl bg-black' src={video} type='video/mp4' autoPlay muted/>
             </div>
-            <div className=' bg-orange-400 flex flex-col gap-5 justify-center px-10 pb-10'>
+            <div className=' bg-gradient-to-b from-black via-gray-800 to-black flex flex-col gap-5 justify-center px-10 pb-10 text-gray-300'>
                 <div className='text-4xl font-bold'> We Are</div>
-                <div className='text-4xl text-yellow-400 font-bold'>Supplements Villa Family</div>
+                <div className='text-4xl font-bold'>Supplements Villa Family</div>
                 <div>Supplements Villa is India's Finest supplements store that aims to provide you authentic supplements, health, fitness & wellness products at pocket friendly prices at free of delivery cost.</div>
                 <div>
                     <button>BUY NOW</button>
@@ -481,7 +481,7 @@ const LandingSm = () => {
             </div>
         </div>
 
-        <div className='flex gap-9 flex-col px-10 py-10'>
+        <div className='flex gap-9 flex-col px-10 py-10 bg-black'>
             <div className='text-2xl font-bold'>
                 Trusted Supplement Store in India for bodybuilding, health and nutrition supplements
             </div>
@@ -527,7 +527,7 @@ const LandingSm = () => {
             </div>
         </div>
 
-        <div className='flex gap-6 pb-16 flex-col justify-center items-center'>
+        <div className='flex gap-6 pb-16 flex-col justify-center items-center bg-black'>
             <div className='flex flex-col justify-center items-center gap-3 w-2/3 px-10'>
                 <div>
                     <img src={logo}/>
@@ -598,7 +598,7 @@ const LandingSm = () => {
             </div>
         </div>
 
-        <footer className='flex place-content-between p-8 border-y-2 border-black'>
+        <footer className='flex place-content-between p-8 border-y-2 border-black bg-black'>
             <div className='text-base'>
                 <p className='text-gray-600'>Copyright © 2024, supplementsvilla.com</p>
             </div>

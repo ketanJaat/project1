@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon backend/saurav/index.js",
+    "build": "npm install && npm install --prefix frontend/vite-project && npm run build --prefix frontend/vite-project",
+    "start": "nodemon backend/saurav/index.js"
   },
   "keywords": [],
   "author": "",
