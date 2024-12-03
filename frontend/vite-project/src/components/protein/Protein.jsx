@@ -1,6 +1,4 @@
 import React from 'react'
-import Navbarfull from '../navbarFull'
-import Navbarlg from '../NavbarLg'
 import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
