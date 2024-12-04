@@ -114,7 +114,7 @@ const NavbarFull = () => {
                     <div className='flex items-center gap-2 bg-gray-400 rounded-2xl p-2'>
                         <a href='/cart' className='flex items-center gap-2'>
                             <FaCartPlus className='text-xl'/>
-                            <p>cart</p>
+                            <p>Cart</p>
                         </a>
                         
                     </div>
