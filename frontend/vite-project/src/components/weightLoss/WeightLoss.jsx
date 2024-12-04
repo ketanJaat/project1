@@ -4,7 +4,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/weightLoss/all/IndexFull'
+import IndexFull from '../categories/weightLoss/all/indexFull'
 import IndexLg from '../categories/weightLoss/all/IndexLg'
 import IndexSm from '../categories/weightLoss/all/IndexSm'
 

@@ -3,7 +3,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/proteins/all/IndexFull'
+import IndexFull from '../categories/proteins/all/indexFull'
 import IndexLg from '../categories/proteins/all/IndexLg'
 import IndexSm from '../categories/proteins/all/IndexSm'
 

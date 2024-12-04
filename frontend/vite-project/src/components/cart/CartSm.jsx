@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../NavbarSm'
 import NavbarSm from '../NavbarSm'
 import { PiArrowSquareLeftDuotone } from "react-icons/pi";
 import { PiArrowSquareRightDuotone } from "react-icons/pi";

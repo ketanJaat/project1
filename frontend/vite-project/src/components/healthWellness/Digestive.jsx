@@ -3,7 +3,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/healthWellness/digestiveEnzymes/IndexFull'
+import IndexFull from '../categories/healthWellness/digestiveEnzymes/indexFull'
 import IndexLg from '../categories/healthWellness/digestiveEnzymes/IndexLg'
 import IndexSm from '../categories/healthWellness/digestiveEnzymes/IndexSm'
 

@@ -3,7 +3,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/carbo/carbo/IndexFull'
+import IndexFull from '../categories/carbo/carbo/indexFull'
 import IndexLg from '../categories/carbo/carbo/IndexLg'
 import IndexSm from '../categories/carbo/carbo/IndexSm'
 

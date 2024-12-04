@@ -3,7 +3,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/musclePumping/all/IndexFull'
+import IndexFull from '../categories/musclePumping/all/indexFull'
 import IndexLg from '../categories/musclePumping/all/IndexLg'
 import IndexSm from '../categories/musclePumping/all/IndexSm'
 
