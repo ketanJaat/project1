@@ -5,7 +5,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/essentials/bcaaAmino/indexFull'
+import IndexFull from '../categories/essentials/bcaaAmino/IndexFull'
 import IndexLg from '../categories/essentials/bcaaAmino/IndexLg'
 import IndexSm from '../categories/essentials/bcaaAmino/IndexSm'
 

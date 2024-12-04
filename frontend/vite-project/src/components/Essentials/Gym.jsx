@@ -5,7 +5,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/essentials/gymEssentials/indexFull'
+import IndexFull from '../categories/essentials/gymEssentials/IndexFull'
 import IndexLg from '../categories/essentials/gymEssentials/IndexLg'
 import IndexSm from '../categories/essentials/gymEssentials/IndexSm'
 

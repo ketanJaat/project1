@@ -5,7 +5,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/stacks/muscleGaining/indexFull'
+import IndexFull from '../categories/stacks/muscleGaining/IndexFull'
 import IndexLg from '../categories/stacks/muscleGaining/IndexLg'
 import IndexSm from '../categories/stacks/muscleGaining/IndexSm'
 

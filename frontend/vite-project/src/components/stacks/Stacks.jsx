@@ -5,7 +5,7 @@ import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/stacks/all/indexFull'
+import IndexFull from '../categories/stacks/all/IndexFull'
 import IndexLg from '../categories/stacks/all/IndexLg'
 import IndexSm from '../categories/stacks/all/IndexSm'
 
