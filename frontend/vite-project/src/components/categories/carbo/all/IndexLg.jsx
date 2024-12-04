@@ -1,4 +1,5 @@
 import React from 'react'
+import NavbarLg from '../../../Navbarlg';
 import { CiHome } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useSelector } from 'react-redux';
@@ -9,7 +10,6 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react'
-import NavbarLg from '../../../Navbarlg';
 
 const IndexLg = () => {
 
@@ -28,7 +28,7 @@ const IndexLg = () => {
 
   return (
     <div>
-        <Navbarlg/>
+        <NavbarLg/>
 
         <div className='  relative '>{/*poster */}
             <div className='flex items-center w-full'>
