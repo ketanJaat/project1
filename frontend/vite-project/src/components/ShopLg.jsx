@@ -13,10 +13,9 @@ import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { FaCartPlus } from "react-icons/fa";
-import NavbarFull from './navbarFull';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import NavbarLg from './navbarlg';
 import axios from 'axios';
+import NavbarLg from './navbarlg';
 
 const ShopLg = () => {
 

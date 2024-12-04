@@ -13,7 +13,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { FaCartPlus } from "react-icons/fa";
-import NavbarFull from './NavbarFull';
+import NavbarFull from './navbarFull';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { HiMiniXMark } from "react-icons/hi2";
 import { RiArrowDropDownLine } from "react-icons/ri";
