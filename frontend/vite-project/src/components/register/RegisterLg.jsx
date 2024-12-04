@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { PiArrowSquareLeftDuotone } from "react-icons/pi";
 import { PiArrowSquareRightDuotone } from "react-icons/pi";
+import NavbarLg from '../NavbarLg';
 
 import logo from '../../assets/logo.png'
 import { FaArrowRight, FaFacebook, FaHome } from "react-icons/fa";
@@ -9,7 +10,6 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { FaCartPlus } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import NavbarLg from '../navbarlg';
 import axios from 'axios';
 
 
