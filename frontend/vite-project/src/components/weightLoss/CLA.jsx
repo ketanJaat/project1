@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbarfull from '../navbarFull'
+import NavbarFull from '../NavbarFull'
 import Navbarlg from '../navbarlg'
 import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'

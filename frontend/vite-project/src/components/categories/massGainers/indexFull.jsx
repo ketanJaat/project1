@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import NavbarFull from '../../navbarFull'
+import NavbarFull from '../../NavbarFull'
 import { CiHome } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useSelector } from 'react-redux';

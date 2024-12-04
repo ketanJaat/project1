@@ -13,6 +13,7 @@ import { HiMiniXMark } from "react-icons/hi2";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import NavbarFull from '../NavbarFull';
 
 
 const RegisterFull = () => {

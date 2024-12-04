@@ -1,5 +1,4 @@
 import React from 'react'
-import NavbarFull from '../../../navbarFull'
 import { CiHome } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useSelector } from 'react-redux';
