@@ -1,11 +1,9 @@
 import React from 'react'
-import Navbarfull from '../navbarFull'
-import Navbarlg from '../navbarlg'
 import NavbarSm from '../NavbarSm'
 import ProductLg from '../ProductLg'
 import ProductSm from '../ProductSm'
 import ProductFull from '../productFull'
-import IndexFull from '../categories/musclePumping/citrulline/indexFull'
+import IndexFull from '../categories/musclePumping/citrulline/IndexFull'
 import IndexLg from '../categories/musclePumping/citrulline/IndexLg'
 import IndexSm from '../categories/musclePumping/citrulline/IndexSm'
 
