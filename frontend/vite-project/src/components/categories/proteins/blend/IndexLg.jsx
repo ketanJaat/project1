@@ -9,7 +9,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react'
-import Navbarlg from '../../../navbarlg';
+import Navbarlg from '../../../Navbarlg';
 
 
 const IndexLg = () => {

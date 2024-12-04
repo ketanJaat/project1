@@ -1,6 +1,5 @@
 import React from 'react'
 import { CiHome } from "react-icons/ci";
-
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useSelector } from 'react-redux';
 import proteinDabba from '../../../../assets/proteinDabba.png'
@@ -10,7 +9,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react'
-import Navbarlg from '../../../navbarlg';
+import Navbarlg from '../../../Navbarlg';
 
 
 
