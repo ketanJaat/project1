@@ -9,7 +9,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { FaCartPlus } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import NavbarLg from '../navbarlg';
+import NavbarLg from '../NavbarLg';
 
 
 const LoginLg = () => {
